@@ -37,13 +37,18 @@
 #bb .bb-btn-imp:hover{background:var(--imp2)}
 .bb-dark{background:var(--imp);color:#fff}
 .bb-nav{position:sticky;top:0;z-index:40;background:rgba(21,35,74,.97);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
-.bb-nav .in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.bb-brand{font-family:'Playfair Display',Georgia,serif;font-size:18px}
+.bb-nav .in{max-width:1080px;margin:0 auto;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:padding .3s}
+.bb-brand{font-family:'Playfair Display',Georgia,serif;font-size:19px}
+.bb-clin{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0}
+.bb-dmlogo{height:40px;width:auto;display:block;transition:height .3s,opacity .3s}
+.bb-nav.bb-mini .in{padding-top:10px;padding-bottom:10px}
+.bb-nav.bb-mini .bb-dmlogo{height:0;opacity:0}
+.bb-nav.bb-mini .bb-clin{gap:0}
 .bb-crm{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:3px!important}
 .bb-nav nav{display:none;gap:22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 .bb-nav nav a:hover{color:#fff}
 #bb .bb-nav .bb-btn{padding:10px 18px;font-size:10px}
-.bb-hero{padding:64px 0 0}
+.bb-hero{padding:48px 0 0}
 #bb .bb-hero h1{font-size:clamp(34px,6vw,60px);line-height:1.1;max-width:820px;margin:18px 0 24px}
 .bb-lead{max-width:640px;color:rgba(255,255,255,.78);font-size:18px;line-height:1.7;font-weight:300}
 .bb-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -106,7 +111,7 @@
 .bb-docgrid{display:grid;gap:40px;align-items:center}
 .bb-docimg{width:100%;max-width:420px;border-radius:4px;display:block}
 #bb .bb-id{display:flex;align-items:center;gap:14px}
-.bb-mono{height:38px;width:auto;display:block}
+.bb-mono{height:44px;width:auto;display:block}
 .bb-footlogo{width:240px;max-width:100%;height:auto;display:block}
 .bb-quote{font-family:'Playfair Display',Georgia,serif;font-size:clamp(21px,2.6vw,26px);line-height:1.45;color:#fff;margin-top:28px!important;padding-left:20px;border-left:2px solid var(--gold)}
 .bb-logo{width:180px;height:auto;display:block;margin-bottom:20px}
@@ -115,7 +120,10 @@
 .bb-photos{gap:20px}
 .bb-docgrid{grid-template-columns:5fr 7fr;gap:72px}
 .bb-nav nav{display:flex}
-.bb-hero{padding-top:128px}
+.bb-hero{padding-top:72px}
+.bb-dmlogo{height:68px}
+.bb-brand{font-size:21px}
+.bb-mono{height:52px}
 .bb-facts{grid-template-columns:repeat(4,1fr)}
 .bb-cards{grid-template-columns:1fr 1fr}
 .bb-grid3{grid-template-columns:repeat(3,1fr);gap:40px}
@@ -142,7 +150,7 @@
 <a href="#local">Local</a>
 <a href="#duvidas">Dúvidas</a>
 </nav>
-<a class="bb-btn" href="https://wa.me/5514998924063?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Dr.%20Bruno%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20avalia%C3%A7%C3%A3o%20capilar." target="_blank" rel="noopener noreferrer">WhatsApp da Clínica</a>
+<div class="bb-clin"><a href="#local" aria-label="Clínica DeMarchi One, ver localização"><img class="bb-dmlogo" src="img/logo-demarchi-claro.webp" alt="Clínica DeMarchi One"></a><a class="bb-btn" href="https://wa.me/5514998924063?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Dr.%20Bruno%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20avalia%C3%A7%C3%A3o%20capilar." target="_blank" rel="noopener noreferrer">WhatsApp da Clínica</a></div>
 </div>
 </header>
 
@@ -333,5 +341,6 @@
 
 </div>
 
+<script>(function(){var n=document.querySelector(".bb-nav");if(!n)return;function f(){n.classList.toggle("bb-mini",window.scrollY>60)}f();window.addEventListener("scroll",f,{passive:true})})();</script>
 </body>
 </html>
